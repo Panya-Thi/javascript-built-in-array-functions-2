@@ -374,4 +374,27 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+function filterMember(bill){
+ return bill.member !== null
+}
+ function mapMember (bill){
+
+
+    return bill.member.name
+ }
+ function reduceMember(accumulator, currentValue) {
+
+    if (!accumulator.includes(currentValue)) {
+        accumulator.push(currentValue);
+    }
+    return accumulator;
+}
+
+
+
+const totalMembers = bills.filter(filterMember).map(mapMember).reduce(reduceMember,[])
+
+
+console.log(totalMembers)
+console.log(totalMembers.length)
